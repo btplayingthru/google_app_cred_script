@@ -7,7 +7,9 @@ This repository is a fork from [elishaterada/heroku-google-application-credentia
 
 ## Usage
 
-1. Create Config Vars key `GOOGLE_CREDENTIALS` and paste the content of service account credential JSON file as is.
-2.  Create a key under Config Vars `GOOGLE_APPLICATION_CREDENTIALS` and set a value as `google-credentials.json`.
+1. Create Config Vars key `GCAL_CREDENTIALS` and paste the content of OAuth account credential JSON file as is.
+2.  Create a key under Config Vars `GCAL_APPLICATION_CREDENTIALS` and set a value as `gcal_creds.json`.
+3. Create Config Vars key `GMAIL_CREDENTIALS` and paste the content of OAuth account credential JSON file as is.
+4.  Create a key under Config Vars `GMAIL_APPLICATION_CREDENTIALS` and set a value as `gmail_creds.json`.
 
-The script with generate a file called `google-credentials.json` which holds the key from the step #1 above.
+The script with generate a file called `gcal_creds.json` which holds the key from the step #1 above.
