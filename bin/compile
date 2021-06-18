@@ -11,8 +11,7 @@ GCAL_CREDENTIALS=$(cat ${ENV_DIR}/GCAL_CREDENTIALS)
 GMAIL_CREDENTIALS=$(cat ${ENV_DIR}/GMAIL_CREDENTIALS)
 GCAL_APPLICATION_CREDENTIALS=$(cat ${ENV_DIR}/GCAL_APPLICATION_CREDENTIALS)
 GMAIL_APPLICATION_CREDENTIALS=$(cat ${ENV_DIR}/GMAIL_APPLICATION_CREDENTIALS)
-echo "echo ${GCAL_CREDENTIALS@Q} > /app/${GCAL_APPLICATION_CREDENTIALS@Q}" > $BUILD_DIR/.profile.d/google-credentials.sh
-echo "------> Generating GCal cred file command"
-echo "echo ${GMAIL_CREDENTIALS@Q} > /app/${GMAIL_APPLICATION_CREDENTIALS@Q}" > $BUILD_DIR/.profile.d/google-credentials.sh
-echo "------> Generating Gmail cred file command"
+echo "echo ${GCAL_CREDENTIALS@Q} > /app/${GCAL_APPLICATION_CREDENTIALS@Q}
+echo ${GMAIL_CREDENTIALS@Q} > /app/${GMAIL_APPLICATION_CREDENTIALS@Q}" > $BUILD_DIR/.profile.d/google-credentials.sh
+echo "------> Generated Google Credential Commands!"
 chmod +x $BUILD_DIR/.profile.d/google-credentials.sh
