@@ -9,6 +9,8 @@ echo "------> Generating .profile.d file to generate gmail_creds.json and gcal_c
 mkdir -p $BUILD_DIR/.profile.d
 GCAL_CREDENTIALS=$(cat ${ENV_DIR}/GCAL_CREDENTIALS)
 GMAIL_CREDENTIALS=$(cat ${ENV_DIR}/GMAIL_CREDENTIALS)
-echo "echo ${GCAL_CREDENTIALS@Q} > /app/gcal_creds.json" > $BUILD_DIR/.profile.d/google-credentials.sh
-echo "echo ${GMAIL_CREDENTIALS@Q} > /app/gmail_creds.json" > $BUILD_DIR/.profile.d/google-credentials.sh
+GCAL_APPLICATION_CREDENTIALS=$(cat ${ENV_DIR}/GCAL_APPLICATION_CREDENTIALS)
+GMAIL_APPLICATION_CREDENTIALS=$(cat ${ENV_DIR}/GMAIL_APPLICATION_CREDENTIALS)
+echo "echo ${GCAL_CREDENTIALS@Q} > /app/${GCAL_APPLICATION_CREDENTIALS@Q}" > $BUILD_DIR/.profile.d/google-credentials.sh
+echo "echo ${GMAIL_CREDENTIALS@Q} > /app/${GMAIL_APPLICATION_CREDENTIALS@Q}" > $BUILD_DIR/.profile.d/google-credentials.sh
 chmod +x $BUILD_DIR/.profile.d/google-credentials.sh
